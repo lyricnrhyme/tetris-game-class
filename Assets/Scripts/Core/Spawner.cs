@@ -15,6 +15,17 @@ public class Spawner : MonoBehaviour {
         }
     }
 
+    public Shape SpawnShape() {
+        Shape shape = null;
+        shape = Instantiate(GetRandomrShape(), transform.position, Quaternion.identity) as Shape;
+        if (shape) {
+            return shape;
+        } else {
+            Debug.Log("Invalid shape!");
+            return null;
+        }
+    }
+
     // Start is called before the first frame update
     void Start () {
 
